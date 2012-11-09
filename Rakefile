@@ -15,7 +15,7 @@ DISTROS = {
   'ubuntu' => {
     :release => 'ubuntu_precise',
     :version => '12.04',
-    :url     => 'http://releases.ubuntu.com/precise/ubuntu-12.04-server-amd64.iso',
+    :url     => 'http://releases.ubuntu.com/precise/ubuntu-12.04.1-server-amd64.iso',
   },
   'scientific' => {
     :release => 'scientific',
@@ -81,9 +81,9 @@ DISTROS.each do |name, options|
 
     task :setup => :upload do
       if options[:type] == :mk
-        razor('image', 'add', 'mk', remote_file_name)
+        razor('image', 'add', '--type', 'mk', '--path', remote_file_name)
       else
-        razor('image', 'add', 'os', remote_file_name, options[:release], options[:version])
+        razor('image', 'add', '--type', 'os', '--path', remote_file_name, '--name', options[:release], '--version', options[:version])
       end
     end
   end

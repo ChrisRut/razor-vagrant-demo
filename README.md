@@ -51,7 +51,7 @@ $ bin/razor node
 The `razor node attributes` command will show the attributes of `agent1`.
 
 ```
-$ bin/razor node attributes ...
+$ bin/razor node -UUID- -f attributes 
 ```
 
 ![razor node attributes](/benburkert/razor-vagrant-demo/raw/master/images/razor_node_attributes.png)
@@ -81,7 +81,7 @@ $ bin/razor image
 Add a model for `ubuntu\_precise` with the new image.
 
 ```
-$ bin/razor model add template=ubuntu_precise label=install_precise image_uuid=...
+$ bin/razor model add --template=ubuntu_precise --label=install_precise --image-uuid=...
 ```
 
 ![razor model add](/benburkert/razor-vagrant-demo/raw/master/images/razor_model_add.png)
@@ -91,7 +91,7 @@ $ bin/razor model add template=ubuntu_precise label=install_precise image_uuid=.
 Create a policy to install ubuntu on `agent1`.
 
 ```
-$ bin/razor policy add --template=linux_deploy --label=precise --broker-uuid=none --tags=virtualbox_vm --enabled --model-uuid=...
+$ bin/razor policy add --template=linux_deploy --label=precise --broker-uuid=none --tags=virtualbox_vm --enabled true --model-uuid=...
 ```
 
 ![razor policy add](/benburkert/razor-vagrant-demo/raw/master/images/razor_policy_add.png)
