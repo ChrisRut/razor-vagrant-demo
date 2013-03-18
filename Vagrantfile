@@ -4,11 +4,11 @@
 Vagrant::Config.run do |config|
 
   config.vm.define :gold do |box_config|
-    box_config.vm.box = 'gold'
+    box_config.vm.box = 'precise64'
 
     box_config.vm.host_name  = 'gold.localdomain'
 
-    box_config.vm.box_url = 'http://files.vagrantup.com/precise32.box'
+    box_config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
 
     box_config.vm.customize ["modifyvm", :id, "--memory", 1024]
     box_config.vm.customize ["modifyvm", :id, "--name", 'gold.localdomain']
@@ -82,7 +82,7 @@ Vagrant::Config.run do |config|
   # end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding 
+  # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
   # config.vm.provision :chef_solo do |chef|
