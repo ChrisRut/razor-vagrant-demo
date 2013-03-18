@@ -32,4 +32,9 @@ node gold {
     path    => ['/usr/bin','/bin'],
     require => Class['razor', 'dhcp']
   }
+
+  exec { '/usr/bin/apt-get update':
+    before => Package['isc-dhcp-server'],
+  }
+
 }
