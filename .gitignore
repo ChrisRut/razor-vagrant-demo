@@ -5,6 +5,7 @@
 .rvmrc
 .librarian
 .vagrant
+*.iso
 coverage
 InstalledFiles
 lib/bundler/man
