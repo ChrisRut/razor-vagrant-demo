@@ -30,7 +30,8 @@ node gold {
     group   => 'root',
     cwd     => '/opt/razor',
     path    => ['/usr/bin','/bin'],
-    require => Class['razor', 'dhcp']
+    require => Class['razor', 'dhcp'],
+    notify  => Service['xinetd'],
   }
 
   exec { '/usr/bin/apt-get update':
